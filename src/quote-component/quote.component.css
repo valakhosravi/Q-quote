@@ -1,0 +1,95 @@
+.q-card {
+    margin: 10px 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.q-card header {
+    padding: 5px 5px;
+}
+.q-card article {
+    padding: 5px 5px;
+}
+.q-card footer {
+    padding: 5px 5px;
+    overflow: hidden;
+}
+
+.q-color-blue {
+    background-color: #e3f2fd;
+}
+.q-color-blue header {
+    border-bottom: 1px solid #bbdefb;
+    background-color: #bbdefb;
+}
+.q-color-blue footer {
+    border-top: 1px solid #bbdefb;
+}
+
+.q-color-purple {
+    background-color: #ede7f6;
+}
+.q-color-purple header {
+    border-bottom: 1px solid #d1c4e9;
+    background-color: #d1c4e9;
+}
+.q-color-purple footer {
+    border-top: 1px solid #d1c4e9;
+}
+
+.q-color-pink {
+    background-color: #fce4ec;
+}
+.q-color-pink header {
+    border-bottom: 1px solid #f8bbd0;
+    background-color: #f8bbd0;
+}
+.q-color-pink footer {
+    border-top: 1px solid #f8bbd0;
+}
+
+.q-color-orange {
+    background-color: #fff3e0;
+}
+.q-color-orange header {
+    border-bottom: 1px solid #ffe0b2;
+    background-color: #ffe0b2;
+}
+.q-color-orange footer {
+    border-top: 1px solid #ffe0b2;
+}
+
+.q-color-yellow {
+    background-color: #fffde7;
+}
+.q-color-yellow header {
+    border-bottom: 1px solid #fff9c4;
+    background-color: #fff9c4;
+}
+.q-color-yellow footer {
+    border-top: 1px solid #fff9c4;
+}
+
+.q-color-green {
+    background-color: #e8f5e9;
+}
+.q-color-green header {
+    border-bottom: 1px solid #c8e6c9;
+    background-color: #c8e6c9;
+}
+.q-color-green footer {
+    border-top: 1px solid #c8e6c9;
+}
+
+.q-color-teal {
+    background-color: #e0f2f1;
+}
+.q-color-teal header {
+    border-bottom: 1px solid #b2dfdb;
+    background-color: #b2dfdb;
+}
+.q-color-teal footer {
+    border-top: 1px solid #b2dfdb;
+}
+
+.text-red {
+    color: red;
+}

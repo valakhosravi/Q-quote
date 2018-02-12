@@ -5,42 +5,37 @@ class Quote extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            colors: [
-                'blue',
-                'purple',
-                'pink',
-                'orange',
-                'yellow',
-                'green',
-                'teal',
-            ],
-            counter: 0,
+            colors: ['blue','green','purple','teal','pink','orange','yellow',]
         };
     }
 
-    getRandomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min) + min);
-    }
-    
-
     render() {
-        const randomNumber = this.getRandomNumber(0, this.state.colors.length);
-        console.log(randomNumber);
+        console.log(this.props.quote);
         return (
-                <div className={"q-card q-color-"+ this.state.colors[randomNumber] + " rounded"}>
+                <div className={"q-card q-color-"+ this.state.colors[this.props.quote.id % 7] + " rounded"}>
                     <header className="rounded-top">
-                        <strong>Les Brown</strong>
-                        <p className="d-inline-block pull-right m-0"><small> Fri Feb 09 2018</small></p>
+                        <strong>{this.props.quote.author}
+                        </strong>
+                        <i className="fa fa-ellipsis-v pull-right pl-2">
+                        </i>
+                        <div className="q-card-menu rounded pull-right px-2">
+                            <div className="my-1">Share</div>
+                            <div className="my-1">Edit</div>
+                            <div className="my-1">Delete</div>
+                            <div className="my-1">Report</div>
+                        </div>
                     </header>
                     <article>
-                        We can bring positive energy into our daily lives by smiling more, talking to strangers in line, replacing handshakes with hugs, and calling our friends just to tell them we love them.
+                        {this.props.quote.content}
                     </article>
                     <footer>
-                        <button type="button" className="btn btn-outline-primary pull-right" data-toggle="button">
-                            <i className="fa fa-heart-o mr-2 text-red"></i>
-                            LIKE
-                            <span className="ml-2">0</span>
-                        </button>
+                        <span className="pull-left rounded">
+                            <i className="fa fa-heart-o text-red pr-1"></i>
+                            <span className="pl-1">
+                                {this.props.quote.like_count}
+                            </span>
+                        </span>
+                        <p className="d-inline-block pull-right m-0">{new Date(this.props.quote.create_date).toDateString()}</p>                        
                     </footer>
                 </div>
         );

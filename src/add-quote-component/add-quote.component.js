@@ -16,7 +16,7 @@ class AddQuote extends Component {
                 <div className={"q-card-a q-color-"+ this.state.colors[this.props.index % 7] + " rounded"}>
                     <header className="rounded-top">
                         <strong>
-                            USER PUSER
+                            YOUR NAME HERE
                         </strong>
                         <i className="fa fa-ellipsis-v pull-right"></i>
                     </header>
@@ -40,13 +40,18 @@ class AddQuote extends Component {
 
     onPostClick(event) {
         console.log(this.state.content);
+        var instance = axios.create({
+            baseURL: 'http://localhost:3000/api/quotes',
+            timeout: 1000,
+            headers: {'X-Custom-Header': 'foobar'}
+        });
         const data = {
             "author": "User",
             "content": this.state.content,
             "create_date": "2018-02-10T22:45:09.294Z",
             "like_count": 0
         };
-        axios.post('http://localhost:3000/api/quotes', data)
+        instance.post('http://localhost:3000/api/quotes', data)
             .then((response) => {
                 console.log('response', response);
                 this.props.refresh();

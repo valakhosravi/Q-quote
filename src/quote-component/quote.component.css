@@ -3,7 +3,7 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .q-card header {
-    padding: 5px 10px;
+    padding: 5px 15px;
     display: flex;
     align-items: center;
     position: relative;
@@ -12,22 +12,33 @@
     margin-left: auto!important;
     cursor: pointer;
 }
-.q-card header i:hover + .q-card-menu {
-    display: block;
-}
 .q-card-menu {
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 25px;
     background: white;
     display: none;
 }
+.q-card-menu :first-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+.q-card-menu :last-child {
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
 .q-card article {
-    padding: 5px 10px;
+    padding: 5px 15px;
 }
 .q-card footer {
-    padding: 5px 10px;
+    padding: 5px 15px;
     overflow: hidden;
+}
+.q-menu-item {
+    cursor: pointer;
+}
+.q-menu-item:hover {
+    background-color: #f8f9fa;
 }
 
 .q-color-blue {

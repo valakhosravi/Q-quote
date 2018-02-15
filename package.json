@@ -6,6 +6,8 @@
     "axios": "^0.17.1",
     "bootstrap": "^4.0.0",
     "font-awesome": "^4.7.0",
+    "jquery": "^1.12.4",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",

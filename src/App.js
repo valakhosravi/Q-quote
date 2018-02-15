@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import $ from 'jquery';
 import Quote from './quote-component/quote.component';
 import AddQuote from './add-quote-component/add-quote.component';
 import './App.css';
@@ -9,8 +10,26 @@ class App extends Component {
 		super(props);
 		this.state = {
 			quotes: [],
+			curentMenuId: -1,
 		};
 		this.getQuotes();
+	}
+
+	componentDidMount() {
+		$(document).ready(() => {
+			$(document).click(($event) => {
+				// var selector = '#menu-' + $event.target.id;
+				$('#menu-' + this.state.curentMenuId).hide();
+				if ($event.target.className.includes('q-menu-button')) {
+					var id = $event.target.id;
+					this.setState({
+						curentMenuId: id,
+					});
+					$('#menu-' + id).show();
+				} else {
+				}
+			});
+		});
 	}
 
     render() {

@@ -18,15 +18,13 @@ class App extends Component {
 	componentDidMount() {
 		$(document).ready(() => {
 			$(document).click(($event) => {
-				// var selector = '#menu-' + $event.target.id;
 				$('#menu-' + this.state.curentMenuId).hide();
 				if ($event.target.className.includes('q-menu-button')) {
 					var id = $event.target.id;
 					this.setState({
 						curentMenuId: id,
 					});
-					$('#menu-' + id).show();
-				} else {
+					$('#menu-' + id).toggle();
 				}
 			});
 		});
@@ -55,6 +53,8 @@ class App extends Component {
 		});
         return (
           <div className="w-100 q-countainer">
+			  <div id="block-ui">
+			  </div>
               <div className="col-sm-12 col-md-6 col-lg-3 d-inline-block pull-left p-0">
 			  		<AddQuote refresh={this.getQuotes.bind(this)}></AddQuote>
                   	{columns[0]}

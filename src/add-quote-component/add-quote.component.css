@@ -4,7 +4,7 @@
     background-color: #ffffff;
 }
 .q-card-a header {
-    padding: 5px 10px;
+    padding: 5px 15px;
     display: flex;
     align-items: center;
     background-color: #fafafa;
@@ -13,15 +13,15 @@
     margin-left: auto!important;
 }
 .q-card-a textarea {
-    padding: 5px 10px;
+    padding: 5px 15px;
     width: 100%;
-    height: 270px;
+    height: 200px;
     border: none;
     outline: none;
     resize: none;
 }
 .q-card-a footer {
-    padding: 5px 10px;
+    padding: 5px 15px;
     overflow: hidden;
     border-top: 1px solid #fafafa;
 }

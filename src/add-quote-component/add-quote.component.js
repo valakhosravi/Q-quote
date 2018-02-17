@@ -18,7 +18,7 @@ class AddQuote extends Component {
                         <strong>
                             YOUR NAME HERE
                         </strong>
-                        <i className="fa fa-ellipsis-v pull-right"></i>
+                        <i className="fa fa-ellipsis-h pull-right"></i>
                     </header>
                     <textarea
                         placeholder="Type Here ..."

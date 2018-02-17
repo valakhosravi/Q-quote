@@ -63,7 +63,7 @@
     background-color: inherit;
     cursor: default;
 }
-.q-card .textarea:focus {
+.q-card .textarea[contentEditable=true] {
     background-color: white;
     cursor: text;
 }

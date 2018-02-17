@@ -36,16 +36,16 @@ class App extends Component {
 		this.state.quotes.forEach((quote, i) => {
 			switch (i % 4) {
 				case 0:
-					columns[1].push(<Quote key={i} quote={quote} index={i}></Quote>);
+					columns[1].push(<Quote key={i} quote={quote} index={i} refresh={this.getQuotes}></Quote>);
 					break;
 				case 1:
-					columns[2].push(<Quote key={i} quote={quote} index={i}></Quote>);
+					columns[2].push(<Quote key={i} quote={quote} index={i} refresh={this.getQuotes}></Quote>);
 					break;
 				case 2:
-					columns[3].push(<Quote key={i} quote={quote} index={i}></Quote>);
+					columns[3].push(<Quote key={i} quote={quote} index={i} refresh={this.getQuotes}></Quote>);
 					break;
 				case 3:
-					columns[0].push(<Quote key={i} quote={quote} index={i}></Quote>);
+					columns[0].push(<Quote key={i} quote={quote} index={i} refresh={this.getQuotes}></Quote>);
 					break;
 				default:
 					break;
@@ -56,7 +56,7 @@ class App extends Component {
 			  <div id="block-ui">
 			  </div>
               <div className="col-sm-12 col-md-6 col-lg-3 d-inline-block pull-left p-0">
-			  		<AddQuote refresh={this.getQuotes.bind(this)}></AddQuote>
+			  		<AddQuote refresh={this.getQuotes}></AddQuote>
                   	{columns[0]}
               </div>
               <div className="col-sm-12 col-md-6 col-lg-3 d-inline-block pull-left p-0">
@@ -72,7 +72,7 @@ class App extends Component {
         );
 	}
 	
-	getQuotes() {
+	getQuotes = () => {
 		axios.get('http://localhost:3000/api/quotes').then(response => {
 			response.data = response.data.reverse();
 			this.setState({

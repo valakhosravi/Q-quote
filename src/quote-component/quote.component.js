@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import axios from 'axios';
+
+import {API} from '../API.js';
 import './quote.component.css';
 
 class Quote extends Component {
@@ -24,11 +27,11 @@ class Quote extends Component {
                                 <i className='fa fa-share pr-2'></i>
                                 Share
                             </div>
-                            <div className="py-1 px-2 q-menu-item text-primary" onClick={this.onEditclick}>
+                            <div className="py-1 px-2 q-menu-item text-primary" onClick={this.onEditClick}>
                                 <i className='fa fa-edit pr-2'></i>
                                 Edit
                             </div>
-                            <div className="py-1 px-2 q-menu-item text-primary">
+                            <div className="py-1 px-2 q-menu-item text-primary" onClick={this.onDeleteClick}>
                                 <i className='fa fa-trash pr-2'></i>
                                 Delete
                             </div>
@@ -55,7 +58,7 @@ class Quote extends Component {
         );
     }
 
-    onEditclick = ($event) => {
+    onEditClick = ($event) => {
         this.setState({
             isEditable: true,
         });
@@ -75,6 +78,23 @@ class Quote extends Component {
             $('#block-ui').css('opacity', '0');
             $('#q-card-id-' + this.props.quote.id).css('z-index', '0');
         }, 10);
+    }
+
+    onDeleteClick = ($event) => {
+        const requestConfig = {
+            baseURL: API.baseURL,
+            url: '/quotes/' + this.props.quote.id.toString(),
+            method: 'delete',
+        }
+        axios.request(requestConfig)
+            .then((response) => {
+                console.log('response', response);
+                this.props.refresh();
+            })
+            .catch((error) => {
+                console.log('error', error);
+            })
+        $event.preventDefault();
     }
 }
 

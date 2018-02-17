@@ -39,11 +39,8 @@ class AddQuote extends Component {
     }
 
     onPostClick(event) {
-        console.log(this.state.content);
         var instance = axios.create({
-            baseURL: 'http://localhost:3000/api/quotes',
-            timeout: 1000,
-            headers: {'X-Custom-Header': 'foobar'}
+            baseURL: 'http://localhost:3000/api/quotes/',
         });
         const data = {
             "author": "User",

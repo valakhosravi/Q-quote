@@ -20,20 +20,22 @@
 }
 .q-card footer button{
     position: absolute;
+    color: #007bff;
     background-color: #e3f2fd;
     border: 1px solid #90caf9;
     cursor: pointer;
     position: relative;
     outline: none;
     overflow: hidden;
-    visibility: hidden;
 }
 .q-card footer button:hover {
     background-color: #bbdefb;
+    
 }
 
 .q-card footer button:active {
-  background-color: #90caf9;
+    color: white !important; 
+    background-color: #90caf9;
 }
 
 .q-card-menu {

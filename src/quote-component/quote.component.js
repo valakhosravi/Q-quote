@@ -45,38 +45,46 @@ class Quote extends Component {
                         {this.props.quote.content}
                     </div>
                     <footer>
-                        {/* <button className="rounded px-4">Submit</button> */}
-                        <span className="pull-left rounded">
-                            <i className="fa fa-heart-o text-red pr-1"></i>
-                            <span className="pl-1">
-                                {this.props.quote.like_count}
+                        {this.state.isEditable ? <button className="rounded px-4">Submit</button> : null }
+                        {
+                            !this.state.isEditable ?
+                            <span>
+                                <span className="pull-left rounded">
+                                    <i className="fa fa-heart-o text-red pr-1"></i>
+                                    <span className="pl-1">
+                                        {this.props.quote.like_count}
+                                    </span>
+                                </span>
+                                <p className="d-inline-block pull-right m-0">{new Date(this.props.quote.create_date).toDateString()}</p>
                             </span>
-                        </span>
-                        <p className="d-inline-block pull-right m-0">{new Date(this.props.quote.create_date).toDateString()}</p>                        
+                            : null
+                        }
                     </footer>
                 </div>
         );
     }
 
     onEditClick = ($event) => {
-        this.setState({
-            isEditable: true,
-        });
         setTimeout(() => {
+            $('#q-card-id-' + this.props.quote.id + ' > footer').css('padding', '5px 15px');
             $('#block-ui').css('z-index', '1');
             $('#block-ui').css('opacity', '0.4');
             $('#q-card-id-' + this.props.quote.id).css('z-index', '2');
             $('#textarea-' + this.props.quote.id).get(0).focus();
+            this.setState({
+                isEditable: true,
+            });
         }, 10);
     }
     onCloseEditclick = ($event) => {
-        this.setState({
-            isEditable: false,
-        });
         setTimeout(() => {
+            $('#q-card-id-' + this.props.quote.id + ' > footer').css('padding', '8px 15px');
             $('#block-ui').css('z-index', '0');
             $('#block-ui').css('opacity', '0');
             $('#q-card-id-' + this.props.quote.id).css('z-index', '0');
+            this.setState({
+                isEditable: false,
+            });
         }, 10);
     }
 

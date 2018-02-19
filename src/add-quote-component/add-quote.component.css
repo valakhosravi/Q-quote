@@ -25,7 +25,8 @@
     overflow: hidden;
     border-top: 1px solid #fafafa;
 }
-.q-card-a footer button{
+.q-card-a footer button {
+    color: #007bff;
     background-color: #e3f2fd;
     border: 1px solid #90caf9;
     cursor: pointer;
@@ -38,7 +39,8 @@
 }
 
 .q-card-a footer button:active {
-  background-color: #90caf9;
+    color: white !important;
+    background-color: #90caf9;
 }
 
 .q-color-blue {
